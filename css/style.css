@@ -1,5 +1,17 @@
-/* FILEPATH: /c:/Proyectos/GitHub/Music-Player/css/style.css */
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+* {
+    box-sizing: border-box;
+}
 /* Set the background image */
 header {
     display: flex;
@@ -21,7 +33,7 @@ body {
     max-width: 1280px;
     margin: 0 auto;
     font-family: 'Inter', sans-serif;
-    line-height: 0;
+    line-height: 1.5;
     overflow-x: hidden;
     padding: 4rem;
     display: flex;
@@ -33,7 +45,7 @@ h2 {
     font-size: 1rem;
     font-weight: 600;
     color: #E5E7EB;
-    padding: 1rem 0 0.5rem 0;
+    padding: 1rem 0 0 0;
 }
 
 h3 {
@@ -59,13 +71,13 @@ h3 {
     padding: 1rem;
     border-radius: 2rem;
     text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .music-cover {
     width: 20rem;
     height: auto;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
 .music-cover img {
@@ -73,6 +85,15 @@ h3 {
     height: 100%;
     object-fit: cover;
     border-radius: 2rem;
+}
+
+#timeDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap:17rem;
+    font-size: 0.75rem;
+    color: #4D5562;
 }
 
 .controls {
@@ -88,9 +109,10 @@ h3 {
     width: 100%;
     height: 0.25rem;
     background-color: #E5E7EB;
-    border-radius: 0.25rem;
+    border-radius: 0.5rem;
     position: relative;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    overflow: hidden; /* Agrega overflow: hidden para ocultar ".progress" cuando se desplace hacia la derecha */
 }
 
 .progress {
@@ -99,9 +121,11 @@ h3 {
     left: 0;
     height: 100%;
     background-color: #C93B76;
-    border-radius: 0.25rem;
-    width: 75%;
+    border-radius: 0.5rem;
+    width: 0; /* El ancho se ajustará dinámicamente en el JavaScript */
 }
+
+
 
 .buttons {
     display: flex;
@@ -111,8 +135,8 @@ h3 {
 }
 
 .play {
-    width: 3rem;
-    height: 3rem;
+    width: 3rem; /* Aumenta el tamaño del botón de reproducción */
+    height: 3rem; /* Aumenta el tamaño del botón de reproducción */
     border-radius: 50%;
     background-color: #C93B76;
     display: flex;
@@ -121,6 +145,12 @@ h3 {
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
+
+.play img {
+    width: 2rem; /* Aumenta el tamaño del icono de reproducción */
+    height: 2rem; /* Aumenta el tamaño del icono de reproducción */
+}
+
 
 .prev:hover, .next:hover, .play:hover {
     transform: scale(1.1);

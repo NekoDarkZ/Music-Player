@@ -2,10 +2,11 @@
 <html lang="es">
     <head>
         <meta charset="UTF-8">
-        <title>Music Player</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter" />
-        <link rel="icon" href="favicon.ico">
+        <title>Music Player</title>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" sizes="any">
     </head>
     <body>
         <header>
@@ -16,12 +17,18 @@
                 <img src="images/bg.jpg" alt="bg">
             </div>
             <div class="player">
+                <audio id="audio" src=""></audio>
+
                 <div class="music-cover">
                     <img src="images/cover-1.png" alt="">
                 </div>
                 <div class="music-info">
                     <h2>Lost in the City Lights</h2>
                     <h3>Cosmo Sheldrake</h3>
+                </div>
+                <div id="timeDisplay">
+                    <span id="timeElapsed">0:00</span>
+                    <span id="duration">0:00</span>
                 </div>
                 <div class="progress-bar">
                     <div class="progress"></div>
@@ -44,5 +51,7 @@
         <footer>
             <!-- Nothing here. -->
         </footer>
+
+        <script src="js/script.js"></script>
     </body>
 </html>
